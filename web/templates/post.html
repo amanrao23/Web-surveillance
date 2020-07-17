@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+  <form class="form" method="POST" action="/submit">
+    <div class="input-group input--small">
+        <label class="label">Camera Id</label>
+        {{ form.camera_id }}
+        <!--<input class="input--style-1" type="text" placeholder="YYYY" name="going">--->
+    </div>
+      <div class="input-group input--small">
+          <label class="label">Start Time</label>
+          {{ form.start_time }}
+          <!--<input class="input--style-1" type="text" placeholder="YYYY" name="going">--->
+      </div>
+      <div class="input-group input--small">
+          <label class="label">End Time</label>
+          {{ form.end_time}}
+          <!-- <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start"> -->
+      </div>
+      <div class="input-group input--small">
+          <label class="label">End Time</label>
+          {{ form.filepath}}
+          <!-- <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start"> -->
+      </div>
+
+      {{ form.submit(class="btn btn-outline-info") }}
+  </form>
+  {% endblock content %}

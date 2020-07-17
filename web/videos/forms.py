@@ -1,20 +1,18 @@
 from flask_wtf import FlaskForm
-#from wtforms_components import DateTimeField
+from wtforms.fields.html5 import DateTimeField
 from wtforms import StringField,SubmitField,IntegerField
 from wtforms.validators import DataRequired, Optional, Length,NumberRange
+import datetime
+
+class enterdata(FlaskForm):
+    camera_id = IntegerField('Camera Id:', default=None)
+    start_time= DateTimeField('Start Time',render_kw={"placeholder": "YYYY-MM-DD HH:MM:SS"},default=datetime.datetime.utcnow,validators=[DataRequired()])
+    end_time = DateTimeField('End Time', render_kw={"placeholder": "YYYY-MM-DD HH:MM:SS"},default=datetime.datetime.utcnow,validators=[DataRequired()])
+    filepath=StringField('File Path',validators=[DataRequired()])
+    submit = SubmitField('Upload')
 
 class getinfoform(FlaskForm):
-    cameraid=IntegerField('Camera Id:',default=None)
-    startyear=IntegerField('Start Year:',validators=[NumberRange(min=1901,max=2155)])
-    startmonth=IntegerField('Month:',validators=[NumberRange(min=1,max=12)])
-    startday=IntegerField('Date:',validators=[NumberRange(min=1,max=31)])
-    starthour=IntegerField('Hour',validators=[NumberRange(min=6,max=23)])
-    startmin=IntegerField('Minute',validators=[NumberRange(min=0,max=59)])
-    startsec=IntegerField('Second',validators=[NumberRange(min=0,max=59)])
-    endyear=IntegerField('End Year',validators=[NumberRange(min=1901,max=2155)])
-    endmonth=IntegerField('Month',validators=[NumberRange(min=1,max=12)])
-    endday=IntegerField('Date',validators=[NumberRange(min=1,max=31)])
-    endhour=IntegerField('Hour',validators=[NumberRange(min=6,max=23)])
-    endmin=IntegerField('Minute',validators=[NumberRange(min=0,max=59)])
-    endsec=IntegerField('Second',validators=[NumberRange(min=0,max=59)])
-    submit=SubmitField('Search')
+    camera_id = IntegerField('Camera Id:', default=None)
+    start_time= DateTimeField('Start Time',render_kw={"placeholder": "YYYY-MM-DD HH:MM:SS"},default=datetime.datetime.utcnow)
+    end_time = DateTimeField('End Time', render_kw={"placeholder": "YYYY-MM-DD HH:MM:SS"},default=datetime.datetime.utcnow)
+    submit = SubmitField('Search')

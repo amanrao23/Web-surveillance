@@ -3,68 +3,16 @@
   <form class="form" method="POST" action="go">
     <div class="input-group input--small">
         <label class="label">Camera Id</label>
-        {{ form.cameraid }}
-        <!--<input class="input--style-1" type="text" placeholder="YYYY" name="going">--->
+        {{ form.camera_id }}
+
     </div>
       <div class="input-group input--small">
-          <label class="label">Start Year</label>
-          {{ form.startyear }}
-          <!--<input class="input--style-1" type="text" placeholder="YYYY" name="going">--->
+          <label class="label">Start Time</label>
+          {{ form.start_time }}
       </div>
       <div class="input-group input--small">
-          <label class="label">Start Month</label>
-          {{ form.startmonth}}
-          <!-- <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start"> -->
-      </div>
-      <div class="input-group input--small">
-          <label class="label">Start Day</label>
-          {{ form.startday}}
-          <!-- <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start"> -->
-      </div>
-      <div class="input-group input--small">
-          <label class="label">Start Hour</label>
-          {{ form.starthour}}
-          <!-- <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start"> -->
-      </div>
-      <div class="input-group input--small">
-          <label class="label">Start Minute</label>
-          {{ form.startmin}}
-          <!-- <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start"> -->
-      </div>
-      <div class="input-group input--small">
-          <label class="label">Start Second</label>
-          {{ form.startsec}}
-          <!-- <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start"> -->
-      </div>
-      <div class="input-group input--small">
-          <label class="label">End Year</label>
-          {{ form.endyear}}
-          <!-- <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start"> -->
-      </div>
-      <div class="input-group input--small">
-          <label class="label">End Month</label>
-          {{ form.endmonth}}
-          <!-- <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start"> -->
-      </div>
-      <div class="input-group input--small">
-          <label class="label">End Day</label>
-          {{ form.endday}}
-          <!-- <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start"> -->
-      </div>
-      <div class="input-group input--small">
-          <label class="label">End Hour</label>
-          {{ form.endhour}}
-          <!-- <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start"> -->
-      </div>
-      <div class="input-group input--small">
-          <label class="label">End Minute</label>
-          {{ form.endmin}}
-          <!-- <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start"> -->
-      </div>
-      <div class="input-group input--small">
-          <label class="label">End Second</label>
-          {{ form.endsec}}
-          <!-- <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start"> -->
+          <label class="label">End Time</label>
+          {{ form.end_time}}
       </div>
 
       {{ form.submit(class="btn btn-outline-info") }}

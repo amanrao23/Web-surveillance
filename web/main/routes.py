@@ -1,5 +1,4 @@
-from flask import Blueprint,render_template,request
-from web import app
+from flask import Blueprint
 main=Blueprint('main',__name__)
 
 @main.route('/')

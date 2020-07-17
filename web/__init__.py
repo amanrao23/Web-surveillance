@@ -1,13 +1,19 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from web.config import Config
 
-app=Flask(__name__)
-app.config['SECRET_KEY'] = 'any secret string'
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///site.db'
-db=SQLAlchemy(app)
 
-from web.videos.routes import video
-from web.main.routes import main
+db=SQLAlchemy()
 
-app.register_blueprint(video)
-app.register_blueprint(main)
+def create_app(config_class=Config):
+    app=Flask(__name__)
+    app.config.from_object(Config)
+    db.init_app(app)
+
+    from web.videos.routes import video
+    from web.main.routes import main
+
+    app.register_blueprint(video)
+    app.register_blueprint(main)
+
+    return app
